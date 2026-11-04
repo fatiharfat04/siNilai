@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 require_once __DIR__ . '/../helpers.php';
+require_once __DIR__ . '/../src/ValidasiNilai.php';
+require_once __DIR__ . '/../src/Penilaian.php';
 require_once __DIR__ . '/../src/Mahasiswa.php';
 require_once __DIR__ . '/../src/PenilaianDasar.php';
 require_once __DIR__ . '/../src/PenilaianReguler.php';

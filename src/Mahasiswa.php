@@ -1,6 +1,7 @@
 <?php
 declare(strict_types=1);
 class Mahasiswa {
+    use ValidasiNilai;
     private string $nim;
     private string $nama;
     private float $tugas;
@@ -11,9 +12,7 @@ class Mahasiswa {
         $nim = trim($nim); $nama = trim($nama);
         if (!preg_match('/^[0-9]{7,15}$/D', $nim)) throw new InvalidArgumentException('NIM harus 7–15 digit.');
         if ($nama === '' || strlen($nama) > 100) throw new InvalidArgumentException('Nama wajib diisi, maksimal 100 byte.');
-        foreach ([$tugas, $uts, $uas] as $nilai) {
-            if (!is_finite($nilai) || $nilai < 0 || $nilai > 100) throw new InvalidArgumentException('Nilai harus 0–100.');
-        }
+        $this->validasi($tugas, $uts, $uas);
         if (!in_array($skema, ['reguler', 'praktikum'], true)) throw new InvalidArgumentException('Skema tidak dikenal.');
         $this->nim = $nim; $this->nama = $nama;
         $this->tugas = $tugas; $this->uts = $uts; $this->uas = $uas; $this->skema = $skema;
