@@ -33,7 +33,7 @@
             <section>
                 <h2>Hasil Perhitungan</h2>
                 <p><?= e($hasil['nama']) ?>: <?= number_format($hasil['akhir'], 2, ',', '.') ?></p>
-                <!-- HASIL_GRADE -->
+                <p>Grade: <?= e($hasil['grade']) ?> — <?= e($hasil['status']) ?></p>
             </section>
         <?php endif; ?>
         <p>Hasil pada tahap ini belum disimpan. CRUD dan database ditambahkan pada tahap 8.</p>

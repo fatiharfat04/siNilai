@@ -13,13 +13,6 @@ main {
   margin: auto;
   padding: 20px;
 }
-/* main.card {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex: auto;
-} */
 nav {
   display: flex;
   gap: 16px;
